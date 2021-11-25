@@ -1,1 +1,0 @@
-este fichero se utiliza para no borrar el directorio
