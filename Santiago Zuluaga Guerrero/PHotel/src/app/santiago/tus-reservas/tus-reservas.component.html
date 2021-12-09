@@ -1,0 +1,222 @@
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: #2c3236;">
+    <div class="container-fluid">
+        <div id="usuario"></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barra" aria-controls="barra" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="spinner-grow text-light" role="status">
+            <span class="visually-hidden"></span>
+          </div>
+          <h1><span class="badge badge-secondary">Ciclo4 Hostel</span></h1>
+        <div class="collapse navbar-collapse" id="barra">
+            <ul class="navbar-nav mx-auto">
+            <!-- Funcionalidades Admin -->    
+            <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">Crear Habitacion</button>
+                <button type="button" class="btn btn-secondary">Crear Reserva</button>
+                <button type="button" class="btn btn-secondary">Ver Habitaciones Creadas</button>
+                <button type="button" class="btn btn-secondary">Ver Usuarios</button>
+              </div>
+               <!-- Funcionalidades User -->    
+            <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">Autocheck In</button>
+                <button type="button" class="btn btn-secondary" [routerLink]="['']">Realizar Reserva</button>
+                <button type="button" class="btn btn-secondary" [routerLink]="['tus_reservas']">Consultar Mi Reserva</button>
+               
+              </div>
+            </ul>
+            <ul class="navbar-nav" >
+                <li class="nav-item">
+                    <button class="btn btn-dark" id="editar" name="editar"><span class='fa fa-home'></span> Home</button>
+                </li>&nbsp;&nbsp;
+                <li class="nav-item">
+                    <button class="btn btn-dark" id="inicio" name="inicio"><span class='fa fa-bookmark'></span> Registro</button>
+                </li>&nbsp;&nbsp;
+                <li class="nav-item">
+                    <button class="btn btn-dark" id="login" name="login"><span class='fa fa-bell'></span> Realizar Reserva</button>
+                </li>&nbsp;&nbsp;
+                <li class="nav-item">
+                    <button class="btn btn-dark" id="login" name="login"><span class='fa fa-book'></span> Reservas Realizadas</button>
+                </li>&nbsp;&nbsp;
+                <li class="nav-item">
+                    <button class="btn btn-dark" id="login" name="login"><span class='fa fa-door-open'></span> AutoCheck In</button>
+                </li>&nbsp;&nbsp;
+                <li class="nav-item">
+                    <button class="btn btn-secondary" id="upload" name="upload"><span class='fas fa-sign-in-alt'></span> LogIn / Iniciar Sesión</button>
+                </li>&nbsp;&nbsp;
+                
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+<head>
+    <title>Reserva Habitación</title>
+</head>
+<body>
+    
+
+<div id="div_cabeza" class="container" >
+    <!-- <div id="div_encabezado" style="float: left; width: 20%; align-content: left; height: 100%;">
+        <button (click)="changeMonth(1)" class="btn-reservas">Realizar Reserva</button>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-ini">Login / Iniciar sesión</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-home">HOME</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-res-rea">Reservas Realizadas</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-auto">AutoCheck In</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-registro">Registro</button>
+    
+    </div>
+    <br> -->
+    <div id="div_cuerpo" style="float: right; width: 100%; background-color: rgb(240, 239, 239);">
+<br>
+<br>
+        <h1 id="id_reserva">TUS RESERVAS</h1>
+        <br>
+        <br>
+<br>
+        <div id="div_left">
+            
+            <div class="titulo-registrar">
+              <table id="tusreservas"  >
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Numero de Personas</th>
+                    <th>Habitacion</th>
+                    <th></th>
+                </tr>
+                
+                
+            </table>
+
+            </div>
+            
+        </div>
+        <br>
+        <br>
+        
+        
+        <div id="div_btn">
+          <button id="btn_volver" [routerLink]="['']">VOLVER</button>
+      </div>
+      
+    </div>
+    <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    
+
+</div>
+
+</body>
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+         
+        
+      </section>
+      <!-- Section: Social media -->
+  
+      <!-- Section: Form -->
+      <section class="">
+        <form action="">
+          <!--Grid row-->
+          <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-auto">
+              <p class="pt-2">
+                <strong>Suscríbete para saber más de nosotros</strong>
+              </p>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-md-5 col-12">
+              <!-- Email input -->
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="form5Example21" class="form-control" />
+                <label class="form-label" for="form5Example21">Email </label>
+              </div>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-auto">
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-outline-light mb-4">
+                Suscribirse
+              </button>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </form>
+      </section>
+      <!-- Section: Form -->
+  
+      <!-- Section: Text -->
+      <section class="mb-4">
+        <p>
+          Siempre estarémos dispuestos a escucharte, aquí tienes todos nuestros números telefónicos
+
+        </p>
+        <h3>Líneas Telefónicas <span class="badge badge-secondary"></span></h3>
+        <h4>+57 302 3214551 <span class="badge badge-secondary"></span></h4>
+        <h4>+57 (6)749 2522 <span class="badge badge-secondary"></span></h4>
+        <h4>01 8000 325325 <span class="badge badge-secondary"></span></h4>
+      </section>
+    <!-- Section: Text -->
+  
+      
+      <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
