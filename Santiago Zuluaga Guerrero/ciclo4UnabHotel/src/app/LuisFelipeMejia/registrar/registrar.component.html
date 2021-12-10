@@ -1,0 +1,124 @@
+<div class="container-fluid px-1 py-5 mx-auto">
+  <div class="row d-flex justify-content-center ">
+    <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center contenedor-formulario ">
+      <h4 class="title">REGISTRARSE</h4>
+      <p class="blue-text">Por favor complete los sienguientes datos<br> Para disfrutar de los servicios de nuestros hotel.</p>&nbsp;
+      <div class="card">
+        <form class="form-card" onsubmit="event.preventDefault()" [formGroup]="datosformulario">
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nombre<span
+                  class="text-danger"> *</span></label> <input type="text" formControlName="fname" id="fname"
+                name="fname" placeholder="Ingrese su nombre"> </div>
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Apellido<span
+                  class="text-danger"> *</span></label> <input type="text" formControlName="lname" id="lname"
+                name="lname" placeholder="Ingrese su apellido"> </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">email
+                <span class="text-danger"> *</span>
+              </label>
+              <input type="email" formControlName="email" id="email" name="email" placeholder="Ingrese su email">
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">telefono<span
+                  class="text-danger"> *</span></label> <input type="number" formControlName="phone" id="phone"
+                name="phone" placeholder="Ingrese su Telefono"> </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Contraseña<span class="text-danger"> *</span>
+                <span class="text-danger advertencia" *ngIf="password_valid==false">
+                  {{mensaje[4]}}</span>
+              </label>
+              <input (blur)='validar_password()' type="password" formControlName="password" id="password"
+                name="password" placeholder="Ingrese su contraseña">
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Repita su
+                Contraseña
+                <span class="text-danger"> *</span>
+                <span class="text-danger advertencia" *ngIf="password_confirm==false"> {{mensaje[5]}}</span>
+              </label>
+              <input (blur)='validar_confirm_password()' type="password" formControlName="confirm_password" id="confirm_password" name="confirm-password"
+                placeholder="Ingrese nuevamente su contraseña">
+            </div>
+          </div>&nbsp;
+          <div class="row justify-content-end">
+            <div class="form-group col-sm-12"> 
+              <label class="from-control-label px-3"></label>
+              <button type="submit" (click)="recibir_datos()" class="btn-block btn btn-primary">Listo</button> 
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            &nbsp;
+            <div class="from-group col-sm-12">
+              <p>Ya tienes una cuenta? <a href="#!" class="link-info" routerLink="/Login">Ingresa aqui!</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+<div class="form-shadow">
+
+  <form action="" action="post" class="register" [formGroup]="datosformulario">
+
+    <div class="register-switch">
+     <input type="radio" formControlName="sexo_usuario" name="sexo_usuario" id="sex_f" value="f" class="register-switch-input" enable>
+       <label for="sex_f" class="register-switch-label">Femenino</label>
+  
+       <input type="radio" formControlName="sexo_usuario" name="sexo_usuario" id="sex_m" value="m" class="register-switch-input">
+       <label for="sex_m" class="register-switch-label">Masculino</label>
+    </div>
+  
+    <input type="number" value="cedula" class="register-input" formControlName="cedula" name="cedula" placeholder="Cedula">
+    <div class="mensaje">{{retorno1}}</div>
+    <input type="text" value="" class="register-input" formControlName="nombre" name="nombre" placeholder="Nombre">
+    <div class="mensaje">{{retorno_nombre}}</div>
+    <input type="text" value="" class="register-input" formControlName="username" name="username" placeholder="Username">
+    
+    <input type="email" value="" class="register-input" formControlName="email" name="email" placeholder="Email">
+  
+    <input type="password" value="" class="register-input" formControlName="password" name="password" placeholder="password">
+  
+    <button (click)="recibir_datos()"  class="register-button" >Registrar</button>
+  
+  
+  
+  </form>
+
+</div>
+-->
+
+
+
+
+<!--<form action="" action="post" class="register" [formGroup]="datosformulario">
+
+    <div class="register-switch">
+     <input type="radio" formControlName="sexo_usuario" name="sexo_usuario" id="sex_f" value="f" class="register-switch-input" enable>
+       <label for="sex_f" class="register-switch-label">Femenino</label>
+
+       <input type="radio" formControlName="sexo_usuario" name="sexo_usuario" id="sex_m" value="m" class="register-switch-input">
+       <label for="sex_m" class="register-switch-label">Masculino</label>
+    </div>
+
+    <input type="number" value="cedula" class="register-input" formControlName="cedula" name="cedula" placeholder="Cedula">
+    <div class="mensaje">{{retorno1}}</div>
+    <input type="text" value="" class="register-input" formControlName="nombre" name="nombre" placeholder="Nombre">
+    <div class="mensaje">{{retorno_nombre}}</div>
+    <input type="text" value="" class="register-input" formControlName="username" name="username" placeholder="Username">
+    
+    <input type="email" value="" class="register-input" formControlName="email" name="email" placeholder="Email">
+
+    <input type="password" value="" class="register-input" formControlName="password" name="password" placeholder="password">
+
+    <button (click)="recibir_datos()"  class="register-button" >Registrar</button>
+
+
+
+</form>-->
