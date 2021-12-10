@@ -1,0 +1,59 @@
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center ">
+      <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center contenedor-formulario ">
+        <h4 class="title">Crear habitacion</h4>&nbsp;
+        <div class="card">
+          <form class="form-card" onsubmit="event.preventDefault()" [formGroup]="datosformulario">
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3">CodigoHabitacion<span class="text-danger"> *</span>
+                  <span class="text-danger advertencia" *ngIf="cod_hab_valid==false">
+                    {{mensaje[0]}}</span>
+                </label>
+                <input (blur)='validar_cod()' type="text" formControlName="codigo" id="text"
+                  name="text" placeholder="room-000">
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3">precio
+                  <span class="text-danger"> *</span>
+                  <span class="text-danger advertencia" *ngIf="precio_valid==false"> {{mensaje[1]}}</span>
+                </label>
+                <input (blur)='validar_precio()' type="number" formControlName="precio" id="precio" name="confirm-password"
+                  placeholder="Ingrese nuevamente su contraseña">
+              </div>
+            </div>&nbsp;
+            <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">Cantidad minima de huespedes<span class="text-danger"> *</span>
+                    <span class="text-danger advertencia" *ngIf="min_huespedes_valid==false">
+                      {{mensaje[2]}}</span>
+                  </label>
+                  <input (blur)='validar_min_huespedes()' type="number" formControlName="min_huespedes" id="min_huespedes"
+                    name="min_huespedes" placeholder="">
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">Cantidad Maxima de Huespedes
+                    <span class="text-danger"> *</span>
+                    <span class="text-danger advertencia" *ngIf="max_huespedes_valid==false"> {{mensaje[3]}}</span>
+                  </label>
+                  <input (blur)='validar_max_huespedes()' type="number" formControlName="max_huespedes" id="max_huespedes" name="max_huespedes"
+                    placeholder="">
+                </div>
+              </div>&nbsp;
+            <div class="row justify-content-end">
+              <div class="form-group col-sm-12"> 
+                <label class="from-control-label px-3"></label>
+                <button type="submit" (click)="recibir_datos()" class="btn-block btn btn-primary">Listo</button> 
+              </div>
+            </div>
+            <div class="row justify-content-end">
+              &nbsp;
+              <!--<div class="from-group col-sm-12">
+                <p>Ya tienes una cuenta? <a href="#!" class="link-info" routerLink="/Login">Ingresa aqui!</a></p>
+              </div>-->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<div id="div_cabeza" class="">
+    <!-- <div id="div_encabezado" style="float: left; width: 20%; align-content: left; height: 100%;">
+        <button (click)="changeMonth(1)" class="btn-reservas">Realizar Reserva</button>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-ini">Login / Iniciar sesión</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-home">HOME</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-res-rea">Reservas Realizadas</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-auto">AutoCheck In</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-registro">Registro</button>
+    
+    </div>
+    <br> -->
+    <div id="div_cuerpo" style="float: right; width: 100%; background-color: rgb(240, 239, 239);">
+        <br>
+        <br>
+        <h1 id="id_reserva">¡INICIA TU RESERVA!</h1>
+        <br>
+        <br>
+        <br>
+        <div id="div_left">
+
+            <div class="titulo-registrar">
+                <form action="" method="post" class="reservas" name="formulario_reservas"
+                    [formGroup]="datosFormularioReservas">
+                    NOMBRE : <input type="text" name="nombre" formControlName="nombre" id="nombre" placeholder="Nombre">
+                    <br>
+                    APELLIDO : <input type="text" name="apellido" formControlName="apellido" id="apellido"
+                        placeholder="Apellido">
+                    <br>
+                    CEDULA : <input type="number" name="ID" formControlName="ID" id="ID" placeholder="CC">
+                    <br>
+                    EMAIL : <input type="email" name="email" formControlName="email" id="email" placeholder="email">
+                    <br>
+                    CELULAR : <input type="number" name="celular" formControlName="celular" id="celular"
+                        placeholder="celular">
+
+                </form>
+
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <div id="div_right">
+            <div id="calendario">
+                <div id="div_1" class="header-calendar">
+                    <div id="div_1" style="float: left; width: 10%;"><button (click)="changeMonth(-1)"
+                            class="btn-prev">Antes</button></div>
+                    <h4 style="width: 75%; float: left;">{{dateSelect | date:'MMMM, yyyy'}}</h4>
+                    <div id="div_1" style="float: left; width: 10%;">
+                        <button (click)="changeMonth(1)" class="btn-next">Siguiente</button>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <ol class="header-calendar" style="border: 2px solid black;">
+                    <li *ngFor="let day of week" class="day-name">{{day | slice:0:3}}</li>
+                    <li (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+                        *ngFor="let day of monthSelect; let first = first">
+                        <span>{{day?.value}}</span>
+                    </li>
+
+                </ol>
+            </div>
+            <br>
+            <table style="margin: 0 auto;">
+                <td><b>¿Cuantos nos acompañan?</b> </td>
+                <td>Adultos <input type="number" min="0" step="1" value="0" style="margin: 1em; width: 5em;"></td>
+                <td>Niños <input type="number" min="0" step="1" value="0" style="width: 5em;"></td>
+            </table>
+
+        </div>
+        <div id="div_btn">
+            <button class="btn btn-outline-light" id="btn_cancelar">CANCELAR</button>
+            <button class="btn btn-outline-light" id="btn_siguiente" [routerLink]="['elegir_habitacion']">SIGUIENTE</button>
+        </div>
+
+    </div>
+    <br>
+    <br>
+</div>
