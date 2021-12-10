@@ -1,18 +1,25 @@
-#btn_cancelar{
-    background-color: red;
-    padding: 1em;
-    border-color: 0;
-    margin: 3em;
-    
 
-}
 
 input{
     margin: 0.5em;
 }
 
+#btn_cancelar{
+    background-color: #0D6EFD;
+    padding: 0.5em;
+    border-color: 0;
+    margin: 1em;  
+}
+
+#btn_actualizar{
+    background-color: #0D6EFD;
+    padding: 0.5em;
+    border-color: 0;
+    margin: 1em;  
+}
+
 #div_encabezado{
-    margin-top: 10em;
+    margin-top: 5em;
 
 }
 
@@ -23,14 +30,7 @@ input{
 
 
 
-#btn_siguiente{
-    background-color: greenyellow;
-    text-align: center;
-    padding: 1em;
-    border-color: black;
-    margin: 3em;
 
-}
 #div_btn{
     padding: 5em;
     text-align: center;

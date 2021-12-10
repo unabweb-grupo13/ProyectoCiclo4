@@ -7,6 +7,10 @@
 
 }
 
+th{
+    padding: 1em;
+}
+
 #tusreservas{
     margin: 0 auto;
     border-top: 2px solid black;

@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'Registrar', component:RegistrarComponent},
   {path: 'Login', component:LoginComponent},
   {path: 'EditarReservas', component:EditarReservasComponent},
-  {path: 'ElegirHabitacion', component:ElegirHabitacionComponent},
+  {path: 'RegistrarReservas/ElegirHabitacion', component:ElegirHabitacionComponent},
   {path: 'RegistrarReservas', component:RegistrarReservasComponent},
   {path: 'TusReservas', component:TusReservasComponent},
   {path: 'administrar/CrearHabitacion', component:CrearHabitacionComponent}
