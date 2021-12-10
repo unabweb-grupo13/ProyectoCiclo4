@@ -1,0 +1,102 @@
+<div id="div_cabeza" class="">
+    <!-- <div id="div_encabezado" style="float: left; width: 20%; align-content: left; height: 100%;">
+        <button (click)="changeMonth(1)" class="btn-reservas">Realizar Reserva</button>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-ini">Login / Iniciar sesión</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-home">HOME</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-res-rea">Reservas Realizadas</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-auto">AutoCheck In</button>
+        <br>
+        <br>
+        <br>
+        <button (click)="changeMonth(1)" class="btn-registro">Registro</button>
+    
+    </div>
+    <br> -->
+    <div id="div_cuerpo" style="float: right; width: 100%; background-color: rgb(240, 239, 239);">
+        <br>
+        <br>
+        <h1 id="id_reserva">¡ELIGE TU HABITACION!</h1>
+        <br>
+        <br>
+        <br>
+        <div id="div_left">
+            <div class="titulo-registrar">
+                <form action="" method="post" class="reservas" name="formulario_reservas"
+                    [formGroup]="datosFormularioReservas">
+                    <table style="margin: 0 auto;">
+                        <tr>
+                            <th>Tipo de habitación</th>
+                            <th>Disponibilidad</th>
+                            <th>Tu elección</th>
+                        </tr>
+                        <tr>
+                            <TD>SENCILLA</TD>
+                            <TD>
+                                <!-- {{habitacion.sencilla}} -->
+                            </TD>
+                            <TD><input id="sencilla" type="number" min="0" step="1" value="0"
+                                    style="margin: 1em; width: 5em;"></TD>
+                        </tr>
+                        <tr>
+                            <TD>DOBLE</TD>
+                            <TD>
+                                <!-- {{habitacion.doble}} -->
+                            </TD>
+                            <TD><input id="doble" type="number" min="0" step="1" value="0"
+                                    style="margin: 1em; width: 5em;"></TD>
+                        </tr>
+                        <tr>
+                            <TD>TRIPLE</TD>
+                            <TD>
+                                <!-- {{habitacion.triple}} -->
+                            </TD>
+                            <TD><input id="triple" type="number" min="0" step="1" value="0"
+                                    style="margin: 1em; width: 5em;"></TD>
+                        </tr>
+                        <tr>
+                            <TD>KING</TD>
+                            <TD>
+                                <!-- {{habitacion.king}} -->
+                            </TD>
+                            <TD><input id="king" type="number" min="0" step="1" value="0"
+                                    style="margin: 1em; width: 5em;"></TD>
+                        </tr>
+
+                    </table>
+
+
+
+                </form>
+
+            </div>
+
+        </div>
+        <br>
+        <br>
+
+        <div id="div_btn">
+            <button id="btn_volver" [routerLink]="['']">VOLVER</button>
+            <button id="btn_reservar">RESERVAR</button>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+</div>
