@@ -1,42 +1,50 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule }                         from '@angular/core';
+import { BrowserModule }                    from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { MenuComponent } from './grupo13/menu/menu.component';
-import { HomeComponent } from './grupo13/home/home.component';
-import { LoginComponent } from './grupo13/login/login.component';
-import { RegistroComponent } from './grupo13/registro/registro.component';
-import { ReservaComponent } from './grupo13/reserva/reserva.component';
-import { ConsultarReservaComponent } from './grupo13/consultar-reserva/consultar-reserva.component';
-import { ContactoComponent } from './grupo13/contacto/contacto.component';
-import { CheckingComponent } from './grupo13/checking/checking.component';
-import { ServiciogeneralService } from './grupo13/serviciogeneral.service';
+import { AppRoutingModule }                 from './app-routing.module';
+import { AppComponent }                     from './app.component';
+import { HorizontalnavbarComponent }        from './AndersonLugo/horizontalnavbar/horizontalnavbar.component';
+import { HomeComponent }                    from './AndersonLugo/home/home.component';
+import { RegistrarComponent }               from './LuisFelipeMejia/registrar/registrar.component';
+import { LoginComponent }                   from './LuisFelipeMejia/login/login.component';
+import { HorizontalNavBarComponent }        from './DanielCardona/horizontal-nav-bar/horizontal-nav-bar.component';
+import { FooterComponent }                  from './DanielCardona/footer/footer.component';
+import { TusReservasComponent } from './SantiagoZuluaga/tus-reservas/tus-reservas.component';
+import { RegistrarReservasComponent } from './SantiagoZuluaga/registrar-reservas/registrar-reservas.component';
+import { ElegirHabitacionComponent } from './SantiagoZuluaga/elegir-habitacion/elegir-habitacion.component';
+import { EditarReservasComponent } from './SantiagoZuluaga/editar-reservas/editar-reservas.component';
+import { CrearHabitacionComponent } from './AndersonLugo/crear-habitacion/crear-habitacion.component';
+import { ServiciogeneralService } from './LuisFelipeMejia/serviciogeneral.service';
+import { ServiciologinService } from './LuisFelipeMejia/serviciologin.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
+    HorizontalnavbarComponent,
     HomeComponent,
+    RegistrarComponent,
     LoginComponent,
-    RegistroComponent,
-    ReservaComponent,
-    ConsultarReservaComponent,
-    ContactoComponent,
-    CheckingComponent
+    HorizontalNavBarComponent,
+    FooterComponent,
+    TusReservasComponent,
+    RegistrarReservasComponent,
+    ElegirHabitacionComponent,
+    EditarReservasComponent,
+    CrearHabitacionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
-    RouterModule,
-    HttpClientModule,
+    HttpClientModule
   ],
-  providers: [ServiciogeneralService],
+  providers: [
+    ServiciogeneralService,
+    ServiciologinService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

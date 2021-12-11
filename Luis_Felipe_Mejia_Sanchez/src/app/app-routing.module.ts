@@ -1,23 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ConsultarReservaComponent } from './grupo13/consultar-reserva/consultar-reserva.component';
-import { MenuComponent } from './grupo13/menu/menu.component';
-import { LoginComponent } from './grupo13/login/login.component';
-import { RegistroComponent } from './grupo13/registro/registro.component';
-import { ReservaComponent } from './grupo13/reserva/reserva.component';
-import { ContactoComponent } from './grupo13/contacto/contacto.component';
-import { HomeComponent } from './grupo13/home/home.component';
-import { CheckingComponent} from './grupo13/checking/checking.component';
+import { RegistrarComponent } from './LuisFelipeMejia/registrar/registrar.component';
+import { LoginComponent } from './LuisFelipeMejia/login/login.component';
+import { EditarReservasComponent } from './SantiagoZuluaga/editar-reservas/editar-reservas.component';
+import { ElegirHabitacionComponent } from './SantiagoZuluaga/elegir-habitacion/elegir-habitacion.component';
+import { RegistrarReservasComponent } from './SantiagoZuluaga/registrar-reservas/registrar-reservas.component';
+import { TusReservasComponent } from './SantiagoZuluaga/tus-reservas/tus-reservas.component';
+import { CrearHabitacionComponent } from './AndersonLugo/crear-habitacion/crear-habitacion.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'ConsultarReserva', component:  ConsultarReservaComponent },
-  { path: 'Menu', component: MenuComponent },
-  { path: 'Login', component: LoginComponent},
-  { path: 'Registro', component: RegistroComponent},
-  { path: 'Reserva', component: ReservaComponent},
-  { path: 'Checking', component: CheckingComponent},
-  { path: 'Contacto', component: ContactoComponent}
+  {path: 'Registrar', component:RegistrarComponent},
+  {path: 'Login', component:LoginComponent},
+  {path: 'EditarReservas', component:EditarReservasComponent},
+  {path: 'ElegirHabitacion', component:ElegirHabitacionComponent},
+  {path: 'RegistrarReservas', component:RegistrarReservasComponent},
+  {path: 'TusReservas', component:TusReservasComponent},
+  {path: 'administrar/CrearHabitacion', component:CrearHabitacionComponent}
 ];
 
 @NgModule({

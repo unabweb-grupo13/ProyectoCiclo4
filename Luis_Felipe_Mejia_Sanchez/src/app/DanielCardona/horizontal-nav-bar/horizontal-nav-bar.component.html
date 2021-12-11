@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: #5bc0de;">
+  <div class="container-fluid">
+    <div id="usuario"></div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barra" aria-controls="barra"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div *ngIf="isAuth==false" class="spinner-grow text-light" role="status">
+      <span class="visually-hidden"></span>
+    </div>
+    <h2><span class="badge badge-outline-info">Ciclo4 Hotel</span></h2>
+    <div class="collapse navbar-collapse" id="barra">
+      <ul class="navbar-nav mx-auto">
+        <!-- Funcionalidades Admin -->
+        <div *ngIf="isAuth==true && isAdmin==true" class="btn-group btn-group-lg" role="group"
+          aria-label="Basic example">
+          <!--<button type="button" class="btn btn-secondary">Crear Habitacion</button>
+          <button type="button" class="btn btn-secondary">Crear Reserva</button>
+          <button type="button" class="btn btn-secondary">Ver Habitaciones Creadas</button>
+          <button type="button" class="btn btn-secondary">Ver Usuarios</button>
+          -->
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a routerLink="/administrar/CrearHabitacion" class="nav-link" href="#">Crear Habitación</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/" class="nav-link disabled" href="#">Ver Habitaciones</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/" class="nav-link disabled" href="#">Ver Usuarios</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/" class="nav-link disabled" href="#">Ver Reservas</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Funcionalidades User -->
+        <div *ngIf="isAuth==true && isAdmin==false" class="btn-group btn-group-lg" role="group"
+          aria-label="Basic example">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a routerLink="/RegistrarReservas" class="nav-link" href="#">Reservar</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/TusReservas" class="nav-link" href="#">Ver Reserva</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/ElegirHabitacion" class="nav-link" href="#">ElegirHabitacion</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/EditarReservas" class="nav-link" href="#">Editar Reserva</a>
+            </li>
+          </ul>
+
+
+          <!--<button type="button" class="btn btn-secondary">Autocheck In</button>
+                <button type="button" class="btn btn-secondary">Realizar Reserva</button>
+                <button type="button" class="btn btn-secondary">Consultar Mi Reserva</button>
+                -->
+
+        </div>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li *ngIf="isAuth==false" class="nav-item active">
+          <button routerLink="/" class="btn btn-outline-light" id="editar" name="editar"><span
+              class='fa fa-home'></span> Home</button>
+        </li>&nbsp;&nbsp;
+        <li *ngIf="isAuth==false" class="nav-item">
+          <button routerLink="/Registrar" class="btn btn-outline-light" id="inicio" name="inicio"><span
+              class='fa fa-bookmark'></span> Registro</button>
+        </li>&nbsp;&nbsp;
+        <li *ngIf="isAuth==false" class="nav-item">
+          <button class="btn btn-primary" routerLink="/Login" id="upload" name="upload"><span
+              class='fas fa-sign-in-alt'></span> LogIn</button>
+        </li>&nbsp;&nbsp;
+        <li *ngIf="isAuth==true" class="nav-item">
+          <button (click)="cerrar_sesion()" routerLink="/" class="btn btn-primary" id="upload" name="upload"><span
+              class='fas fa-sign-out-alt'></span> LogOut</button>
+        </li>&nbsp;&nbsp;
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
